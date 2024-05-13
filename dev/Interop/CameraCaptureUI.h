@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 #pragma once
 #include "Microsoft.Windows.Media.Capture.CameraCaptureUI.g.h"
@@ -15,7 +15,7 @@ namespace winrt::Microsoft::Windows::Media::Capture::implementation
 
     struct CameraCaptureUI : CameraCaptureUIT<CameraCaptureUI>
     {
-        CameraCaptureUI(Microsoft::Windows::Media::Capture::WindowId const& window) :
+        CameraCaptureUI(winrt::Windows::UI::WindowId const& window) :
             m_windowId(window)
         {
         }
@@ -33,7 +33,7 @@ namespace winrt::Microsoft::Windows::Media::Capture::implementation
         winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::StorageFile> CaptureFileAsync(winrt::Windows::Media::Capture::CameraCaptureUIMode mode);
 
     private:
-        Microsoft::Windows::Media::Capture::WindowId m_windowId;
+        winrt::Windows::UI::WindowId m_windowId;
         token_and_path m_photoTokenFile;
         token_and_path m_videoTokenFile;
         com_ptr<CameraCaptureUIVideoSettings> m_videoSettings = make_self<CameraCaptureUIVideoSettings>();
