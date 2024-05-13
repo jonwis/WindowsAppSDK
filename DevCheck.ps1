@@ -305,8 +305,8 @@ function Get-VSWhereOnline
 }
 
 # Home of vswhere.exe: https://github.com/microsoft/vswhere
-$vswhere = ''
-$vswhere_url = ''
+$global:vswhere = ''
+$global:vswhere_url = ''
 function Get-VSWhere
 {
     if ([string]::IsNullOrEmpty($global:vswhere))
@@ -364,7 +364,7 @@ function Run-Process([string]$exe, [string]$arguments, [Ref][string]$stderr, [in
     return $stdout
 }
 
-$vspath = ''
+$global:vspath = ''
 function Get-VisualStudio2022InstallPath
 {
     if ([string]::IsNullOrEmpty($global:vspath))
